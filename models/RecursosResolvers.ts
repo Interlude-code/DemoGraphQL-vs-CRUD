@@ -10,7 +10,7 @@ const resolversRecurso = {
     },
     Mutation:{
         crearRecurso: async (parent, args) => {
-            const usuarioCreado = await RecursoModel.create({
+            const recursoCreado = await RecursoModel.create({
                 nombre: args.nombre,
                 disponible: args.disponible,
                 fechaPrestamo: args.fechaPrestamo,
@@ -18,7 +18,7 @@ const resolversRecurso = {
                 tipoRecurso: args.tipoRecurso,
             })
 
-            return usuarioCreado;
+            return recursoCreado;
             
         }
 

@@ -1,12 +1,12 @@
 import express from "express"
 import dotenv from 'dotenv';
 import db from "./db/db";
-import { RecursoModel } from "./models/Recurso";
 import { ApolloServer } from 'apollo-server-express';
 import { types } from "./graphql/types";
 import { resolvers } from "./graphql/resolvers";
 
 dotenv.config({ path: '.env' });
+
 const server = new ApolloServer({
   typeDefs: types,
   resolvers: resolvers,
@@ -14,7 +14,6 @@ const server = new ApolloServer({
 
 
 const app = express()
-db()
 app.use(express.json())
 
 // const port= process.env.PORT;
